@@ -43,7 +43,7 @@ namespace Eurosong.Controllers
         public ActionResult Post([FromBody] Vote vote)
         {
             _data.AddVote(vote);
-            return Ok("Success");
+            return Ok("The Vote has been succesfully added!");
         }
 
         // Update vote by {id}
@@ -51,8 +51,17 @@ namespace Eurosong.Controllers
         [Authorize(Policy = "BasicAuthentication", Roles = "admin")]
         public ActionResult<int> Put([FromBody] Vote vote, int id)
         {
-            _data.UpdateVote(vote, id);
-            return Ok("The vote with id '" + id + "' has been updated succesfully!");
+            Vote v = _data.GetVote(id);
+            if (v != null)
+            {
+                _data.UpdateVote(vote, id);
+                return Ok("The vote with id '" + id + "' has been updated succesfully!");
+            }
+            else
+            {
+                return NotFound("Vote not found! Try another ID!");
+            }
+            
 
         }
 
@@ -61,8 +70,17 @@ namespace Eurosong.Controllers
         [Authorize(Policy = "BasicAuthentication", Roles = "admin")]
         public ActionResult<int> Delete(int id)
         {
-            _data.DeleteVote(id);
-            return Ok("The vote with id '" + id + "' has been deleted succesfully!");
+            Vote v = _data.GetVote(id);
+            if (v != null)
+            {
+                _data.DeleteVote(id);
+                return Ok("The vote with id '" + id + "' has been deleted succesfully!");
+            }
+            else
+            {
+                return NotFound("Vote not found! Try another ID!");
+            }
+            
 
         }
     }

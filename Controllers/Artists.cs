@@ -50,9 +50,18 @@ namespace Eurosong.Controllers
         [HttpGet("{id}/picture")]
         public ActionResult<string> GetArtistPicture(int id)
         {
-            string picture = _data.GetArtistPicture(id);
-            if (picture != null) return Ok(picture);
-            return NotFound("There is no picture found of Artist with id '" + id + "'");
+            Artist a = _data.GetArtist(id);
+            if (a != null) 
+            {
+                string picture = _data.GetArtistPicture(id);
+                if (picture != null) return Ok(picture);
+                return NotFound("There is no picture found of Artist with id '" + id + "'");
+            }
+            else
+            {
+                return NotFound("Artist not found! Try another ID!");
+            }   
+            
         }
 
         // Add new Artist to database
@@ -61,7 +70,7 @@ namespace Eurosong.Controllers
         public ActionResult Post([FromBody] Artist artist)
         {
             _data.AddArtist(artist);
-            return Ok("Success");
+            return Ok("The Artist has been succesfully added!");
         }
 
         // Update artist by {id}
@@ -69,8 +78,16 @@ namespace Eurosong.Controllers
         [Authorize(Policy = "BasicAuthentication", Roles = "admin")]
         public ActionResult<int> Put([FromBody] Artist artist, int id)
         {
-            _data.UpdateArtist(artist, id);
-            return Ok("The artist with id '" + id + "' has been updated succesfully!");
+            Artist a = _data.GetArtist(id);
+            if (a != null)
+            {
+                _data.UpdateArtist(artist, id);
+                return Ok("The artist with id '" + id + "' has been updated succesfully!");
+            }
+            else
+            {
+                return NotFound("Artist not found! Try another ID!");
+            }
 
         }
 
@@ -79,8 +96,17 @@ namespace Eurosong.Controllers
         [Authorize(Policy = "BasicAuthentication", Roles = "admin")]
         public ActionResult<int> Delete(int id)
         {
-            _data.DeleteArtist(id);
-            return Ok("The artist with id '" + id + "' has been deleted succesfully!");
+            Artist a = _data.GetArtist(id);
+            if (a != null)
+            {
+                _data.DeleteArtist(id);
+                return Ok("The artist with id '" + id + "' has been deleted succesfully!");
+            }
+            else
+            {
+                return NotFound("Artist not found! Try another ID!");
+            }
+            
 
         }
     }
