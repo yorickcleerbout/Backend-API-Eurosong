@@ -26,7 +26,7 @@ This repository is made as part of a assignment of the course 'Programming Web'.
 <br>
 
 - [**Get all Votes**](docs/votes.md#get-requests) : `GET /Votes`
-- [**Get Votes by id**](docs/votes.md#get-requests) : `GET /Artists/{id}`
+- [**Get Votes by id**](docs/votes.md#get-requests) : `GET /Votes/{id}`
 
 <br>
 
