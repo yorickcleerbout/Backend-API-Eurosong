@@ -72,9 +72,16 @@ namespace Eurosong.Controllers
         [Authorize(Policy = "BasicAuthentication", Roles = "admin")]
         public ActionResult<int> Put([FromBody] Song song, int id)
         {
-            _data.UpdateSong(song, id);
-            return Ok("The song with id '" + id + "' has been updated succesfully!");
-
+            Song s = _data.GetSong(id);
+            if (s != null)
+            {
+                _data.UpdateSong(song, id);
+                return Ok("The song with id '" + id + "' has been updated succesfully!");
+            }
+            else
+            {
+                return NotFound("Song not found! Try another ID!");
+            }
         }
 
         // Delete song by {id}
@@ -82,8 +89,16 @@ namespace Eurosong.Controllers
         [Authorize(Policy = "BasicAuthentication", Roles = "admin")]
         public ActionResult<int> Delete(int id)
         {
-            _data.DeleteSong(id);
-            return Ok("The song with id '" + id + "' has been deleted succesfully!");
+            Song s = _data.GetSong(id);
+            if (s != null)
+            {
+                _data.DeleteSong(id);
+                return Ok("The song with id '" + id + "' has been deleted succesfully!");
+            }
+            else
+            {
+                return NotFound("Song not found! Try another ID!");
+            }
 
         }
 
