@@ -11,22 +11,22 @@ This repository is made as part of a assignment of the course 'Programming Web'.
 ## **Open Endpoints:**
 *Open endpoints require no Authentication.*
 
-- [**Get all Songs**](docs/songs.md) : `GET /Songs`
-- [**Get Songs by id**](docs/songs.md) : `GET /Songs/{id}`
-- [**Get Votes by song id**](docs/songs.md) : `GET /Songs/{id}/votes`
-- [**Get Points by song id**](docs/songs.md) : `GET /Songs/{id}/points`
+- [**Get all Songs**](docs/songs.md#get-requests) : `GET /Songs`
+- [**Get Songs by id**](docs/songs.md#get-requests) : `GET /Songs/{id}`
+- [**Get Votes by song id**](docs/songs.md#get-requests) : `GET /Songs/{id}/votes`
+- [**Get Points by song id**](docs/songs.md#get-requests) : `GET /Songs/{id}/points`
 
 <br>
 
-- [**Get all Artists**](docs/artists.md) : `GET /Artists`
-- [**Get Artists by id**](docs/artists.md) : `GET /Artists/{id}`
-- [**Get Songs by Artist id**](docs/artists.md) : `GET /Artists/{id}/songs`
-- [**Get Picture of Artist id**](docs/artists.md) : `GET /Artists/{id}/picture`
+- [**Get all Artists**](docs/artists.md#get-requests) : `GET /Artists`
+- [**Get Artists by id**](docs/artists.md#get-requests) : `GET /Artists/{id}`
+- [**Get Songs by Artist id**](docs/artists.md#get-requests) : `GET /Artists/{id}/songs`
+- [**Get Picture of Artist id**](docs/artists.md#get-requests) : `GET /Artists/{id}/picture`
 
 <br>
 
-- [**Get all Votes**](docs/votes.md) : `GET /Votes`
-- [**Get Votes by id**](docs/votes.md) : `GET /Artists/{id}`
+- [**Get all Votes**](docs/votes.md#get-requests) : `GET /Votes`
+- [**Get Votes by id**](docs/votes.md#get-requests) : `GET /Artists/{id}`
 
 <br>
 
@@ -34,21 +34,21 @@ This repository is made as part of a assignment of the course 'Programming Web'.
 
 *Closed endpoints require Basic Authentication credentials to be included in the header of the request as a **Base64Encoded** string.*
 
-- [**Add new Song to Database**](docs/songs.md) : `POST /Songs`
-- [**Update a Song in the Database**](docs/songs.md) : `PUT /Songs/{id}`
-- [**Remove a Song from the Database**](docs/songs.md) : `DELETE /Songs/{id}`
+- [**Add new Song to Database**](docs/songs.md#post-requests) : `POST /Songs`
+- [**Update a Song in the Database**](docs/songs.md#put-requests) : `PUT /Songs/{id}`
+- [**Remove a Song from the Database**](docs/songs.md#delete-requests) : `DELETE /Songs/{id}`
 
 <br>
 
-- [**Add new Artist to Database**](docs/artists.md) : `POST /Artists`
-- [**Update an Artist in the Database**](docs/artists.md) : `PUT /Artists/{id}`
-- [**Remove an Artist from the Database**](docs/artists.md) : `DELETE /Artists/{id}`
+- [**Add new Artist to Database**](docs/artists.md#post-requests) : `POST /Artists`
+- [**Update an Artist in the Database**](docs/artists.md#put-requests) : `PUT /Artists/{id}`
+- [**Remove an Artist from the Database**](docs/artists.md#delete-requests) : `DELETE /Artists/{id}`
 
 <br>
 
-- [**Add new Vote to Database**](docs/votes.md) : `POST /Votes`
-- [**Update a Vote in the Database**](docs/votes.md) : `PUT /Votes/{id}`
-- [**Remove a Vote from the Database**](docs/votes.md) : `DELETE /Votes/{id}`
+- [**Add new Vote to Database**](docs/votes.md#post-requests) : `POST /Votes`
+- [**Update a Vote in the Database**](docs/votes.md#put-requests) : `PUT /Votes/{id}`
+- [**Remove a Vote from the Database**](docs/votes.md#delete-requests) : `DELETE /Votes/{id}`
 
 
 
