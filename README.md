@@ -4,7 +4,7 @@
 
 This repository is made as part of a assignment of the course 'Programming Web'. The main goal of this course is to create some sort of "Eurosong" type API with front-end created with Vue.js attached to it. The backend API you can find in this repository but for the front-end there will be an other repository to keep things seperate.
 
-[**Link to Front-End Repo: Coming soon**]()
+[**Link to Front-End Repo:**](https://github.com/yorickcleerbout/Front-End-Eurosong)
 
 # **Endpoints**
 
